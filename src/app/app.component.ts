@@ -7,8 +7,9 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'store';
-  items=["Andres","Daniela","Carlos"]
+  title:string = 'store';
+  power:number=10;
+  items:Array<string> =["Andres","Daniela","Carlos"]
   products: Product[]=[
     {
       id: '1',

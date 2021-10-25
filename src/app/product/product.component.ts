@@ -16,6 +16,8 @@ export class ProductComponent {
     @Input() product: Product | undefined; //To communicate component father with child
     @Output() productClicked: EventEmitter<any> = new EventEmitter<any>(); //To communicate component child with father
 
+    today=new Date();
+    
     // constructor() {
     //     console.log('1. constructor');
     // }
