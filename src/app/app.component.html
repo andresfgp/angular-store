@@ -31,7 +31,17 @@
   </li>
 </ul>
 
-<div *ngFor="let product of products">
-  <!-- COMPONENT -->
-  <app-product (productClicked)='clickProduct($event)' [product]='product'></app-product>
+<div class="products">
+  <h1>Products</h1>
+  <div class="product__grid">
+    <!-- COMPONENT -->
+    <app-product
+      class="product__grid-container"
+      *ngFor="let product of products"
+      (productClicked)='clickProduct($event)'
+      [product]='product'>
+    </app-product>
+  </div>
 </div>
+
+<!-- <app-cart></app-cart> -->

@@ -1,0 +1,39 @@
+img {
+    height: 100px;
+    width: 150px;
+    object-fit: cover;
+}
+
+h3{
+    margin: 0;
+    color: #1C3643;
+}
+
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba($color: #000000, $alpha: 0.15);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    height: 85%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+button{
+    background: rgba($color: #000000, $alpha: 0.5);
+    padding: 8px;
+    color: white;
+    border: 1px solid transparent;
+    border-radius:15px;
+}
+
+button:hover{
+    background: rgba($color: #000000, $alpha: 0.25);
+    padding: 8px;
+    color: white;
+    border: 1px solid transparent;
+    border-radius:15px;
+}
