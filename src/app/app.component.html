@@ -1,13 +1,22 @@
 <!-- INPUT -->
 <input type="text" [(ngModel)]="title"> 
 
-<!-- String interpolation -->
+<!-- STRING INTERPOLATION -->
 {{title}}
 
 <!-- IF -->
 <div *ngIf="title==='Andres'"> 
-  This is a IF
+  This is Andres
 </div>
+
+<!-- SWITCH -->
+<div [ngSwitch]="title"> 
+  <p *ngSwitchCase="'Julian'">This is Julian</p>
+  <p *ngSwitchCase="'Daniela'">This is Daniela</p>
+  <p *ngSwitchCase="'Carolina'">This is Carolina</p>
+  <p *ngSwitchDefault>No hay match</p>
+</div>
+
 
 <!-- BUTTON -->
 <button (click)="addItem()">Add item</button>
@@ -23,7 +32,6 @@
 </ul>
 
 <div *ngFor="let product of products">
-  {{product.title}}
-  <img [src]="product.image" width="100px" alt="">
-  {{product.price}}
+  <!-- COMPONENT -->
+  <app-product (productClicked)='clickProduct($event)' [product]='product'></app-product>
 </div>
