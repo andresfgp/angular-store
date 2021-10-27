@@ -1,0 +1,10 @@
+.products{
+    text-align: center;
+    font-family:sans-serif
+}
+
+.product__grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin: 20px;
+}
