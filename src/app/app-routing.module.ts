@@ -1,3 +1,4 @@
+import { LayoutComponent } from './layout/layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
@@ -10,24 +11,30 @@ import { TestComponent } from './test/test.component';
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'home',
-    pathMatch:'full'
-  },
-  {  
-    path:'home',
-    component: HomeComponent,
-  },
-  {  
-    path:'products',
-    component: ProductsComponent,
-  },
-  {  
-    path:'products/:id',
-    component: ProductDetailComponent,
-  },
-  {  
-    path:'contact',
-    component: ContactComponent,
+    component:LayoutComponent,
+    children:[
+      {
+        path:'',
+        redirectTo:'home',
+        pathMatch:'full',
+      },
+      {  
+        path:'home',
+        component: HomeComponent,
+      },
+      {  
+        path:'products',
+        component: ProductsComponent,
+      },
+      {  
+        path:'products/:id',
+        component: ProductDetailComponent,
+      },
+      {  
+        path:'contact',
+        component: ContactComponent,
+      },
+    ]
   },
   {  
     path:'test',
