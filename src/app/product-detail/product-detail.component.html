@@ -1,0 +1,16 @@
+
+<div class="productDetail">
+    <div class="productDetail__container">
+        <h1>Product Detail</h1>
+        <div class="productDetail__container-img">
+            <img [src]="product.image" alt="image">
+        </div>
+        <div class="productDetail__container-info">
+            <ul>
+                <li><strong>Name:</strong> {{product.title}}</li>
+                <li><strong>Price:</strong> {{product.price | currency}}</li>
+            </ul>
+            <p><strong>Description:</strong> {{product.description}}</p>
+        </div>
+    </div>
+</div>

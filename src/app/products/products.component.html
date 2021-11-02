@@ -1,12 +1,13 @@
+<app-header></app-header>
 <div class="products">
-    <h1>Products</h1>
-    <div class="product__grid">
-      <!-- COMPONENT -->
-      <app-product
-        class="product__grid-container"
-        *ngFor="let product of products"
-        (productClicked)='clickProduct($event)'
-        [product]='product'>
-      </app-product>
-    </div>
+  <h1>Products</h1>
+  <div class="product__grid">
+    <!-- COMPONENT -->
+    <app-product
+      class="product__grid-container"
+      *ngFor="let product of products"
+      (productClicked)='clickProduct($event)'
+      [product]='product'>
+    </app-product>
   </div>
+</div>
