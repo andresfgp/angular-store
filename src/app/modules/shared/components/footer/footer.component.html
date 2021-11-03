@@ -1,1 +1,41 @@
-<p>footer works!</p>
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <div class="box">
+            <h3>Productos</h3>
+            <ul>
+              <li>
+                <a routerLink="/products" [queryParams]="{ type: 'news' }"
+                  >Nuevos Productos</a
+                >
+              </li>
+              <li>
+                <a routerLink="/products" [queryParams]="{ type: 'offer' }"
+                  >En oferta</a
+                >
+              </li>
+              <li>
+                <a routerLink="/products" [queryParams]="{ type: 'latest' }"
+                  >Últimos productos</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="box">
+            <h3>Contacto</h3>
+                <ul>
+                   <li>
+                       <a href='mailto:andres.fgp@hotmail.com'><mat-icon>mail_outline</mat-icon>Email</a>
+                   </li> 
+                   <li>
+                       <a href='https://api.whatsapp.com/send?phone=573147931680&text=Hello!%20Andr%C3%A9s,%20Let%27s%20work%20together!'><mat-icon>whatsapp</mat-icon>Whatsapp</a>
+                   </li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
