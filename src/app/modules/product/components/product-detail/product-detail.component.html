@@ -1,4 +1,26 @@
+<section class="productDetail">
+    <mat-card class="productDetail__container">
+        <mat-card-header>
+            <mat-card-title>PRODUCT DETAIL</mat-card-title>
+        </mat-card-header>
+        <div class="crop-image">
+            <img [src]="product.image" alt="">
+        </div>
+        <mat-card-content>
+            <ul>
+                <li><strong>Name:</strong> {{product.title}}</li>
+                <li><strong>Price:</strong> {{product.price | currency}}</li>
+            </ul>
+            <p><strong>Description:</strong> {{product.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+    
+        </mat-card-actions>
+    </mat-card>
+</section>
 
+
+<!-- 
 <div class="productDetail">
     <div class="productDetail__container">
         <h1>Product Detail</h1>
@@ -13,4 +35,4 @@
             <p><strong>Description:</strong> {{product.description}}</p>
         </div>
     </div>
-</div>
+</div> -->
