@@ -4,7 +4,7 @@ import {Component,
         EventEmitter,
         SimpleChanges} from "@angular/core";
 
-import { Product } from "../product.model";
+import { Product } from "../../../../model/product/product.model";
 
 @Component({
     selector: 'app-product',
