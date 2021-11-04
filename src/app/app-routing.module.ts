@@ -42,11 +42,15 @@ const routes: Routes = [
     component: TestComponent,
   },
   {
+    path:'admin',
+    // component:PageNotFoundComponent,
+    loadChildren: () => import ('./modules/admin/admin.module').then(module=>module.AdminModule)
+  },
+  {
     path:'**',
     // component:PageNotFoundComponent,
     loadChildren: () => import ('./modules/page-not-found/page-not-found.module').then(module=>module.PageNotFoundModule)
   }
-
 ];
 
 @NgModule({
