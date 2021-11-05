@@ -9,7 +9,7 @@ import { ProductsService } from '../../../core/services/products/products.servic
 })
 export class ProductsComponent implements OnInit{
 
-  products: Product[];
+  products: Product[]=[];
   constructor(private productsService: ProductsService) {}
 
   clickProduct(id: number) {
@@ -24,7 +24,8 @@ export class ProductsComponent implements OnInit{
 
   fetchProducts(){
     this.productsService.getAllProducts()
-    .subscribe(products=>{console.log(products);
+    .subscribe(products=>{
+      this.products=products;
     })
   }
 }

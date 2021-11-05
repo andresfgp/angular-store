@@ -23,10 +23,11 @@ export class ProductDetailComponent implements OnInit {
     // this.route.params.subscribe((params:Params) => {
     //   this.fetchProduct()
     // }
+    this.fetchProduct('3')
   }
-  fetchProduct(id){
+  fetchProduct(id:string){
     this.productsService.getProduct(id)
-    .subscribe(product=>{console.log(product)})
+    .subscribe(product=>{this.product=product})
   }
 }
 
