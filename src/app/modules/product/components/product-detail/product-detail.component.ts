@@ -11,12 +11,12 @@ export class ProductDetailComponent implements OnInit {
 
   product: Product;
 
-  constructor(private route:ActivatedRoute,
+  constructor(private activatedRoute:ActivatedRoute,
               private productsService:ProductsService) { }
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit() {
-      this.route.params.subscribe((params:Params) => {
+      this.activatedRoute.params.subscribe((params:Params) => {
       const id=params.id
       this.fetchProduct(id)
       // this.product= this.productsService.getProduct(id)

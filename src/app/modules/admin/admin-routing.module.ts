@@ -5,6 +5,7 @@ import { TableComponent } from './components/table/table.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { AddProductFormComponent } from './components/add-product-form/add-product-form.component';
+import { UpdateProductFormComponent } from './components/update-product-form/update-product-form.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path:'new/product',
         component:AddProductFormComponent,
+      },
+      {
+        path:'update/product/:id',
+        component:UpdateProductFormComponent,
       },
     ]
   },

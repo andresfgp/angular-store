@@ -35,6 +35,9 @@
                             matInput
                             formControlName="price">
                     </mat-form-field>
+                    <div *ngIf="priceField.errors && priceField.dirty">
+                        <mat-error *ngIf="priceField.hasError('price_invalid')">Price is not valid</mat-error>
+                    </div>
                 </div>
             </div>
             <div class="row">

@@ -1,46 +1,18 @@
 {
   "list": [
     {
+      "title": "prueba",
+      "price": 32,
+      "image": "",
+      "description": "23",
+      "id": "prueba"
+    },
+    {
       "id": "2",
-      "image": "assets/static/hoodie.png",
-      "title": "Hoodie",
-      "price": 30000,
-      "description": "bla bla bla bla bla"
-    },
-    {
-      "id": "4",
-      "image": "assets/static/pin.png",
-      "title": "Pin",
-      "price": 20000,
-      "description": "bla bla bla bla bla"
-    },
-    {
-      "id": "5",
-      "image": "assets/static/stickers1.png",
-      "title": "Stickers",
-      "price": 80000,
-      "description": "bla bla bla bla bla"
-    },
-    {
-      "id": "6",
-      "image": "assets/static/stickers2.png",
-      "title": "Stickers",
-      "price": 60000,
-      "description": "bla bla bla bla bla"
-    },
-    {
-      "id": "8",
-      "title": "33",
-      "price": 342,
+      "title": "rewwe",
+      "price": 1000,
       "image": "",
-      "description": "432"
-    },
-    {
-      "id": "10",
-      "title": "8",
-      "price": 8,
-      "image": "",
-      "description": "8"
+      "description": "ewrew"
     }
   ]
 }

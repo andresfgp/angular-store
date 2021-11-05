@@ -10,10 +10,10 @@ import { Product } from 'src/app/model/product/product.model';
 export class ProductListComponent implements OnInit {
 
   products:Product[]=[]
-  displayedColumns:string[]=['id','title','price','actions']
+  displayedColumns:string[]=['id','title','price','description','actions']
 
   constructor(
-    private productsService:ProductsService
+    private productsService:ProductsService,
   ) { }
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
@@ -27,6 +27,7 @@ export class ProductListComponent implements OnInit {
       this.products=products;
     })
   }
+  
   deleteProduct(id:string){
     this.productsService.deleteProduct(id)
     .subscribe(deleted=>{

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductsService } from 'src/app/modules/core/services/products/products.service';
 import { Product } from 'src/app/model/product/product.model';
 import { Router } from '@angular/router';
+import { MyValidators } from './../../../../utils/validators';
 
 
 @Component({
@@ -30,7 +31,7 @@ export class AddProductFormComponent implements OnInit {
     this.form=this.formBuilder.group({
       id:['',[Validators.required]],
       title:['',[Validators.required]],
-      price:['',[Validators.required]],
+      price:['',[Validators.required,MyValidators.isPriceValid]],
       image:[''],
       description:['',[Validators.required]],
     })
@@ -43,5 +44,8 @@ export class AddProductFormComponent implements OnInit {
       this.productsService.createProduct(newProduct)
       .subscribe(products=>this.router.navigate(['admin/products']))
     }
+  }
+  get priceField() {
+    return this.form.get('price');
   }
 }
