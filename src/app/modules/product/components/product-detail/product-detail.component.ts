@@ -16,18 +16,28 @@ export class ProductDetailComponent implements OnInit {
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit() {
-    //   this.route.params.subscribe((params:Params) => {
-    //   const id=params.id
-    //   this.product= this.productsService.getProduct(id)
-    // })
-    // this.route.params.subscribe((params:Params) => {
-    //   this.fetchProduct()
-    // }
-    this.fetchProduct('3')
+      this.route.params.subscribe((params:Params) => {
+      const id=params.id
+      this.fetchProduct(id)
+      // this.product= this.productsService.getProduct(id)
+    })
   }
   fetchProduct(id:string){
     this.productsService.getProduct(id)
     .subscribe(product=>{this.product=product})
+  }
+
+  createProduct(){
+    const newProduct:Product=    {
+      id: "7",
+      image: "assets/static/stickers2.png",
+      title: "Stickers",
+      price: 60000,
+      description: "bla bla bla bla bla"
+   };
+    this.productsService.createProduct(newProduct)
+    .subscribe(product=>{console.log(product);
+    })
   }
 }
 

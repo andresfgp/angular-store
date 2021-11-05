@@ -1,4 +1,4 @@
-<section class="productDetail">
+<section class="productDetail" *ngIf="product">
     <mat-card class="productDetail__container">
         <mat-card-header>
             <mat-card-title>PRODUCT DETAIL</mat-card-title>
@@ -14,7 +14,7 @@
             <p><strong>Description:</strong> {{product.description}}</p>
         </mat-card-content>
         <mat-card-actions>
-    
+            <button mat-raised-button (click)="createProduct()">Add</button>
         </mat-card-actions>
     </mat-card>
 </section>

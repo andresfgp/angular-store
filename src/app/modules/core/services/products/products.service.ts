@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../../../../model/product/product.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,15 @@ export class ProductsService {
 
   getAllProducts(){
     // return this.products
-    return this.http.get<Product[]>('https://my-json-server.typicode.com/andresfgp/store/list')
+    return this.http.get<Product[]>(environment.url_api)
   }
 
   getProduct(id:string){
     // return this.products.find(item=>id===item.id)
-    return this.http.get<Product>(`https://my-json-server.typicode.com/andresfgp/store/list/${id}`)
+    return this.http.get<Product>(`${environment.url_api}${id}`)
+  }
+
+  createProduct(product:Product){
+    return this.http.post(`${environment.url_api}`,product)
   }
 }
