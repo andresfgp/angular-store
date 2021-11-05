@@ -1,24 +1,10 @@
 {
   "list": [
     {
-      "id": "1",
-      "image": "assets/static/camiseta.png",
-      "title": "Camiseta",
-      "price": 40000,
-      "description": "bla bla bla bla bla"
-    },
-    {
       "id": "2",
       "image": "assets/static/hoodie.png",
       "title": "Hoodie",
       "price": 30000,
-      "description": "bla bla bla bla bla"
-    },
-    {
-      "id": "3",
-      "image": "assets/static/mug.png",
-      "title": "Mug",
-      "price": 1000,
       "description": "bla bla bla bla bla"
     },
     {
@@ -41,6 +27,20 @@
       "title": "Stickers",
       "price": 60000,
       "description": "bla bla bla bla bla"
+    },
+    {
+      "id": "8",
+      "title": "33",
+      "price": 342,
+      "image": "",
+      "description": "432"
+    },
+    {
+      "id": "10",
+      "title": "8",
+      "price": 8,
+      "image": "",
+      "description": "8"
     }
   ]
 }

@@ -1,0 +1,22 @@
+.products-table{
+    width: 96%;
+    margin: 2%;
+}
+
+.icon-edit:hover{
+    color: orange;
+    cursor: pointer;
+}
+.icon-delete:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.button-add{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+}
+.button-add button{
+    font-size: 40px;
+}

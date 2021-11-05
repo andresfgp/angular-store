@@ -26,7 +26,6 @@ export class ProductDetailComponent implements OnInit {
     this.productsService.getProduct(id)
     .subscribe(product=>{this.product=product})
   }
-
   createProduct(){
     const newProduct:Product=    {
       id: "7",
@@ -56,5 +55,6 @@ export class ProductDetailComponent implements OnInit {
     .subscribe(product=>{console.log(product);
     })
   }
+
 }
 

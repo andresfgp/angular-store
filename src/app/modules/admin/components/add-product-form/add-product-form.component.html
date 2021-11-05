@@ -1,0 +1,59 @@
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>New Product</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input 
+                            placeholder="Id"
+                            type="text"
+                            matInput 
+                            formControlName="id">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input 
+                            placeholder="Title"
+                            type="text"
+                            matInput
+                            formControlName="title">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input
+                            placeholder="Price"
+                            type="number"
+                            matInput
+                            formControlName="price">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <textarea
+                            placeholder="Description"
+                            type="text"
+                            matInput
+                            formControlName="description"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button 
+                mat-raised-button
+                color="primary"
+                type="submit">Save</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
