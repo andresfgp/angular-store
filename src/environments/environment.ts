@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url_api: 'https://my-json-server.typicode.com/andresfgp/store/list/',
+  url_api: 'http://localhost:3000/list/',
 };
 
 /*

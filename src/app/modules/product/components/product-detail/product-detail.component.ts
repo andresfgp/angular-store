@@ -39,5 +39,22 @@ export class ProductDetailComponent implements OnInit {
     .subscribe(product=>{console.log(product);
     })
   }
+  updateProduct(){
+    const updateProduct:Product=    {
+      id: "7",
+      image: "assets/static/stickers2.png",
+      title: "Cambio",
+      price: 50000,
+      description: "Cambio"
+   };
+    this.productsService.updateProduct("7",updateProduct)
+    .subscribe(product=>{console.log(product);
+    })
+  }
+  deleteProduct(){
+    this.productsService.deleteProduct("7")
+    .subscribe(product=>{console.log(product);
+    })
+  }
 }
 
