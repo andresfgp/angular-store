@@ -39,6 +39,10 @@ const routes: Routes = [
         path:'order',
         loadChildren: () => import ('./modules/order/order.module').then(module=>module.OrderModule)
       },
+      {  
+        path:'auth',
+        loadChildren: () => import ('./modules/auth/auth.module').then(module=>module.AuthModule)
+      },
     ]
   },
   {  
