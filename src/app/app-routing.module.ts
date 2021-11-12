@@ -21,7 +21,6 @@ const routes: Routes = [
       },
       {  
         path:'products',
-        canActivate:[AdminGuard],
         // component: ProductsComponent,
         loadChildren: () => import ('./modules/product/product.module').then(module=>module.ProductModule)
       },
@@ -31,7 +30,6 @@ const routes: Routes = [
       // },
       {  
         path:'contact',
-        canActivate:[AdminGuard],
         // component: ContactComponent,
         loadChildren: () => import ('./modules/contact/contact.module').then(module=>module.ContactModule)
       },
@@ -43,6 +41,7 @@ const routes: Routes = [
         path:'auth',
         loadChildren: () => import ('./modules/auth/auth.module').then(module=>module.AuthModule)
       },
+
     ]
   },
   {  
@@ -51,6 +50,7 @@ const routes: Routes = [
   },
   {
     path:'admin',
+    canActivate:[AdminGuard],
     // component:PageNotFoundComponent,
     loadChildren: () => import ('./modules/admin/admin.module').then(module=>module.AdminModule)
   },

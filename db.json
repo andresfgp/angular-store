@@ -1,18 +1,18 @@
 {
   "list": [
     {
-      "title": "prueba",
-      "price": 32,
-      "image": "",
-      "description": "23",
-      "id": "prueba"
-    },
-    {
       "id": "2",
       "title": "rewwe",
       "price": 1000,
       "image": "",
       "description": "ewrew"
+    },
+    {
+      "id": "1",
+      "title": "Camisa",
+      "price": 5,
+      "image": "",
+      "description": "geg"
     }
   ]
 }
