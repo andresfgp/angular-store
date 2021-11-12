@@ -53,7 +53,6 @@ export class UpdateProductFormComponent implements OnInit {
 
   updateProduct(event){
     event.preventDefault()
-    console.log(this.form.value);
     if(this.form.valid){
       const updateProduct:Product=this.form.value
       this.productsService.updateProduct(this.id,updateProduct)

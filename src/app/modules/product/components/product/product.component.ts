@@ -5,7 +5,7 @@ import {Component,
         SimpleChanges} from "@angular/core";
 
 import { Product } from "../../../../model/product/product.model";
-
+import { CartService } from "src/app/modules/core/services/cart/cart.service";
 @Component({
     selector: 'app-product',
     templateUrl: './product.component.html',
@@ -18,9 +18,11 @@ export class ProductComponent {
 
     today=new Date();
     
-    // constructor() {
-    //     console.log('1. constructor');
-    // }
+    constructor(
+        private cartService:CartService
+    ) {
+        // console.log('1. constructor');
+    }
 
     // ngOnChanges(changes: SimpleChanges) {
     //   console.log('2. ngOnChanges');
@@ -41,6 +43,7 @@ export class ProductComponent {
 
     addCart(){
         console.log("añadir al carrito");
-        this.productClicked.emit(this.product.id)
+        this.cartService.addCart(this.product);
+        // this.productClicked.emit(this.product.id)
     }
 }

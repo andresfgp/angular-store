@@ -1,3 +1,7 @@
+# Run Local API
+
+Run `npm install -g json-server` to install json-server global
+Run `json-server --watch db.json` to start Local API
 # Store
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.

@@ -1,4 +1,4 @@
-<mat-toolbar color='primary'>
+<!-- <mat-toolbar color='primary'>
     <mat-toolbar-row>
         <div class="row between-xs middle-xs header-row">
             <nav>
@@ -6,10 +6,67 @@
                 <a mat-button routerLink="/products" routerLinkActive='active'>Products</a>
                 <a mat-button routerLink="/contact" routerLinkActive='active'>Contact</a>
             </nav>
-            <a mat-raised-button matBadge='4' matBadgeColor='warn'>
+            <div> 
+                <a *ngIf="(total$ | async) === 0" routerLink="/order" mat-raised-button matBadgeColor='warn'>
+                    <mat-icon>shopping_cart</mat-icon>
+                    Cart
+                </a>
+                <a *ngIf="(total$ | async) > 0" routerLink="/order" mat-raised-button [matBadge]='total$ | async' matBadgeColor='warn'>
+                    <mat-icon>shopping_cart</mat-icon>
+                    Cart
+                </a>
+                <a mat-button routerLink="/auth/login" routerLinkActive='active'>Login</a>
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar> -->
+<mat-sidenav-container class="navbar" >
+
+    <mat-sidenav #start fixedInViewport >
+        <mat-nav-list (click)="start.close()">
+
+            <a mat-list-item routerLink="/home">
+                <mat-icon>library_books</mat-icon>
+                <span>Home</span>
+            </a>
+
+            <a mat-list-item routerLink="/products">
+                <mat-icon>inventory_2</mat-icon>
+                <span>Products</span>
+            </a>
+
+            <a mat-list-item routerLink="/contact">
+                <mat-icon>account_circle</mat-icon>
+                <span>Contacts</span>
+            </a>
+            <a mat-list-item routerLink="/admin" *ngIf="isLoggedIn$ | async">
+                <mat-icon>admin_panel_settings</mat-icon>
+                <span>Admin</span>
+            </a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-toolbar color="primary" class="row between-xs middle-xs header-row" >
+        <button class="menu-button" mat-icon-button (click)="start.open('mouse')">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div>
+            <a *ngIf="(total$ | async) === 0" routerLink="/order" mat-raised-button matBadgeColor='warn'>
                 <mat-icon>shopping_cart</mat-icon>
                 Cart
             </a>
+            <a *ngIf="(total$ | async) > 0" routerLink="/order" mat-raised-button [matBadge]='total$ | async' matBadgeColor='warn'>
+                <mat-icon>shopping_cart</mat-icon>
+                Cart
+            </a>
+            <a mat-button routerLink="/auth/login" routerLinkActive='active' *ngIf="isLoggedOut$ | async">Login</a>
+            <a mat-button  (click)="logout()" *ngIf="isLoggedIn$ | async">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Logout</span>
+            </a>
         </div>
-    </mat-toolbar-row>
-</mat-toolbar>
+
+    </mat-toolbar>
+
+</mat-sidenav-container>

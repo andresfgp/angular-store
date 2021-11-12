@@ -2,10 +2,10 @@
 //     padding:10px;
 // }
 
-nav>a.active{
-    background-color: rgba(0,0,0,0.25)
+.navbar{
+    z-index: 1;
 }
 
-.header-row{
-    width: 100%;
+.mat-toolbar-single-row {
+    margin: 0;
 }
