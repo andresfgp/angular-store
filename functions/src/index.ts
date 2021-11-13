@@ -3,65 +3,63 @@ import { Request, Response } from 'express';
 
 const functions = require("firebase-functions");
 const express = require("express");
-const cors = require('cors');
+const cors = require('cors')({Origin: true});
 
 const admin = require("firebase-admin");
 admin.initializeApp();
 
 const app = express();
-  
-// Automatically allow cross-origin requests
-app.use(cors({ origin: true }));
 
-app.get("/", async (req:Request, res:Response) => {
-  const snapshot = await admin.firestore().collection("products").get();
-
-  let products:Product[] = [];
-  snapshot.map((doc:any) => {
-      let docId=doc.id
-      let data=doc.data()
-    return {docId,...data };
-  });
-
-  res.status(200).send(JSON.stringify(products));
+app.get("/", (req:Request, res:Response) => {
+     cors(req, res, () => {
+        const snapshot = admin.firestore().collection("products").get();
+        let products:Product[] = [];
+        snapshot.map((doc:any) => {
+            let docId=doc.id
+            let data=doc.data()
+            return {docId,...data };
+        });
+        res.status(200).send(JSON.stringify(products));
+      });
 });
 
-app.get("/:id", async (req:Request, res:Response) => {
-    const snapshot = await admin.firestore().collection('products').doc(req.params.id).get();
+app.get("/:id", (req:Request, res:Response) => {
+    cors(req, res, () => {
+        const snapshot = admin.firestore().collection('products').doc(req.params.id).get();
 
-    const productId = snapshot.id;
-    const productData = snapshot.data();
-
-    res.status(200).send(JSON.stringify({id: productId, ...productData}));
+        const productId = snapshot.id;
+        const productData = snapshot.data();
+    
+        res.status(200).send(JSON.stringify({id: productId, ...productData}));
+    });
 })
 
-app.post("/", async (req:Request, res:Response) => {
-  const product = req.body;
+app.post("/", (req:Request, res:Response) => {
+    cors(req, res, () => {
+        const product = req.body;
 
-  await admin.firestore().collection("products").add(product);
-
-  res.status(201).send();
+        admin.firestore().collection("products").add(product);
+     
+        res.status(201).send();
+    })
 });
 
-app.put("/:id", async (req:Request, res:Response) => {
-    const body = req.body;
+app.put("/:id", (req:Request, res:Response) => {
+    cors(req, res, () => {
+        const body = req.body;
 
-    await admin.firestore().collection('products').doc(req.params.id).update(body);
-
-    res.status(200).send()
+        admin.firestore().collection('products').doc(req.params.id).update(body);
+    
+        res.status(200).send()
+    })
 });
 
-app.delete("/:id", async (req:Request, res:Response) => {
-    await admin.firestore().collection("products").doc(req.params.id).delete();
+app.delete("/:id", (req:Request, res:Response) => {
+    cors(req, res, () => {
+        admin.firestore().collection("products").doc(req.params.id).delete();
 
-    res.status(200).send();
+        res.status(200).send();
+    })
 })
 
 exports.product = functions.https.onRequest(app);
-
-// Create and Deploy Your First Cloud Functions
-// https://firebase.google.com/docs/functions/write-firebase-functions
-//
-exports.helloWorld = functions.https.onRequest((req:Request, res:Response) => {
-  res.send("Hello from Firebase!");
-});
