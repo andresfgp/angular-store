@@ -3,21 +3,24 @@ import { Request, Response } from 'express';
 
 const functions = require("firebase-functions");
 const express = require("express");
-// const cors = require("cors");
+const cors = require('cors');
 
 const admin = require("firebase-admin");
 admin.initializeApp();
 
 const app = express();
+  
+// Automatically allow cross-origin requests
+app.use(cors({ origin: true }));
 
 app.get("/", async (req:Request, res:Response) => {
   const snapshot = await admin.firestore().collection("products").get();
 
   let products:Product[] = [];
   snapshot.map((doc:any) => {
-      let id=doc.id
+      let docId=doc.id
       let data=doc.data()
-    return {id,...data };
+    return {docId,...data };
   });
 
   res.status(200).send(JSON.stringify(products));
