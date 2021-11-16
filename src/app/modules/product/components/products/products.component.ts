@@ -12,10 +12,6 @@ export class ProductsComponent implements OnInit{
   products: Product[]=[];
   constructor(private productsService: ProductsService) {}
 
-  clickProduct(id: number) {
-    console.log(`producto ${id}`);
-  }
-
   ngOnInit() {
     // this.products = this.productsService.getAllProducts();
     // console.log(this.products);
@@ -25,7 +21,6 @@ export class ProductsComponent implements OnInit{
   fetchProducts(){
     this.productsService.getAllProducts()
     .subscribe(products=>{
-      console.log(products);
       this.products=products;
     })
   }

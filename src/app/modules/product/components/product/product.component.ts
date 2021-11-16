@@ -42,7 +42,6 @@ export class ProductComponent {
     // }
 
     addCart(){
-        console.log("añadir al carrito");
         this.cartService.addCart(this.product);
         // this.productClicked.emit(this.product.id)
     }

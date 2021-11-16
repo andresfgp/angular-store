@@ -30,10 +30,9 @@ export class ProductListComponent implements OnInit {
   
   deleteProduct(id:string){
     this.productsService.deleteProduct(id)
-    .subscribe(deleted=>{
-      deleted?
-      this.products = this.products.filter(product => product.id !== id):
-      console.error('Unable to delete the product')})
+    .subscribe((deleted)=>{
+      this.products = this.products.filter(product => product.id !== id)
+    })
   }
 
 }
