@@ -33,7 +33,6 @@ export class AddProductFormComponent implements OnInit {
 
   private buildForm(){
     this.form=this.formBuilder.group({
-      id:['',[Validators.required]],
       title:['',[Validators.required]],
       price:['',[Validators.required,MyValidators.isPriceValid]],
       image:[''],

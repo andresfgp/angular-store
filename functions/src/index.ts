@@ -16,9 +16,9 @@ app.get("/", async (req:Request, res:Response) => {
         const snapshot = await admin.firestore().collection("products").get();
         let products:Product[] = [];
         snapshot.forEach((doc:any) => {
-            let docId=doc.id
+            let id=doc.id
             let data=doc.data()
-            products.push({ docId, ...data });
+            products.push({ id, ...data });
         });
         res.status(200).send(JSON.stringify(products))
 });
