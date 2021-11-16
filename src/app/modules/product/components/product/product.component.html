@@ -9,6 +9,7 @@
     <mat-card-content>
         <p>{{product.description | slice:0:10}}...</p>
         <p>{{today | date:'medium'}}</p>
+        
     </mat-card-content>
     <mat-card-actions>
         <a mat-raised-button [routerLink]="['/products',product.id]">Ver detalle</a>
