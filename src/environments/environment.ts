@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // url_api: 'http://localhost:3000/list/',
-  url_api: 'https://us-central1-store-8a226.cloudfunctions.net/user/',
+  url_api: 'https://us-central1-store-8a226.cloudfunctions.net/product/',
   firebase: {
     projectId: 'store-8a226',
     appId: '1:115382430327:web:6153da8d7ef0a2acfb7472',
