@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Product } from '../../../../model/product/product.model';
 import { ProductsService } from '../../../core/services/products/products.service';
 
@@ -9,7 +11,8 @@ import { ProductsService } from '../../../core/services/products/products.servic
 })
 export class ProductsComponent implements OnInit{
 
-  products: Product[]=[];
+  products: Product[];
+  products$:Observable <Product[]>;
   constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
@@ -21,7 +24,9 @@ export class ProductsComponent implements OnInit{
   fetchProducts(){
     this.productsService.getAllProducts()
     .subscribe(products=>{
-      this.products=products;
+      this.products=products
+      console.log(this.products);
+      // localStorage.setItem('user',JSON.stringify(this.products))
     })
   }
 }

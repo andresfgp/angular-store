@@ -1,0 +1,43 @@
+img{
+    width: 200px;
+}
+
+.products__table{
+    width: 96%;
+    margin: 2%;
+}
+
+.products__table-img{
+    margin: 10px;
+}
+
+.icon-edit:hover{
+    color: orange;
+    cursor: pointer;
+}
+.icon-delete:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.button-add{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+}
+.button-add button{
+    font-size: 40px;
+}
+
+@media only screen and (max-width: 640px)
+{
+    img{
+        width: 50px;
+    } 
+    th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+        padding: 5px;
+    }
+    th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+        padding: 5px;
+    }
+}

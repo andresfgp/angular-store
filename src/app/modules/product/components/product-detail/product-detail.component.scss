@@ -21,7 +21,7 @@ ul{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 500px;
     background: rgba($color: #000000, $alpha: 0.15);
     border-radius: 25px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -29,7 +29,7 @@ ul{
 
 .crop-image {
     display: block;
-    height: 200px;
+    height: 400px;
     width: 100%;
     img {
       object-fit: contain;

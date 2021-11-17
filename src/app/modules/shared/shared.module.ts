@@ -6,17 +6,20 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { MaterialModule } from '../material/material.module';
+import { CartAccumPipe } from './pipes/cart/cartAccum/cart-accum.pipe';
 
 @NgModule({
   declarations: [
     ExponentialPipe,
     HeaderComponent,
     FooterComponent,
+    CartAccumPipe,
   ],
   exports: [
     ExponentialPipe,
     HeaderComponent, 
     FooterComponent, 
+    CartAccumPipe,
   ],
   imports: [
     CommonModule,

@@ -3,9 +3,9 @@
 $primary: mat-palette($mat-indigo);
 
 footer {
-  padding: 50px 60px;
+  padding: 50px 40px;
   margin-top: 20px;
-  background-color: mat-color($primary);
+  background-color: #1a2b56;
   .box {
     h3 {
       color: white;
@@ -27,5 +27,29 @@ footer {
         }
       }
     }
+  }
+}
+
+.container{
+  margin-left:200px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+}
+.container>div{
+  margin-right: 40px;
+}
+
+@media only screen and (max-width: 640px)
+{
+  footer{
+    padding: 50px 20px;
+  }
+  .container{
+    margin-left:0px;
+    justify-content: space-around;
+  }
+  .container>div{
+    margin-right:10px;
   }
 }
