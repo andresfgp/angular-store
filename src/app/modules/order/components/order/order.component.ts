@@ -24,7 +24,8 @@ export class OrderComponent implements OnInit{
       let hash = {};
       this.products = element.filter(o => hash[o.id] ? false : hash[o.id] = true);
       console.log(this.products);
-      localStorage.setItem('user',JSON.stringify(this.products))
+      localStorage.setItem('cart',JSON.stringify(this.products))
+      this.products = JSON.parse(localStorage.getItem('cart'));
     })
     
   }

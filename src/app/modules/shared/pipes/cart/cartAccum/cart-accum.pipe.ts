@@ -6,7 +6,7 @@ import { Product } from 'src/app/model/product/product.model';
 })
 export class CartAccumPipe implements PipeTransform {
 
-  transform(productSelected: Product, products: Product[]): any {
+  transform(productSelected: Product, products: Product[]): number {
     return products.filter((product) => productSelected.id === product.id).length;
    }
 
